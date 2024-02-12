@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/CSS/Styles.css">
+    <title>User Form</title>
+</head>
+<body>
+    <h1>Welcome to Spring Test Portal</h1>
+    <div>
+        <form action="#" th:action="@{/user}" th:object="${user}" method="post">
+            <label for="fName"> First Name: </label>
+            <input type="text" id="fName" name="fName" th:field="*{firstName}">
+            <span th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}"></span><br>
+            <br>
+            <label for="lName"> Last Name: </label>
+            <input type="text" id="lName" name="lName" th:field="*{lastName}">
+            <span th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}"></span><br>
+            <br>
+            <label for="id">ID (for return tester): </label>
+            <input type="number" id="id" name="id" th:field="*{user_id}" placeholder="0 for new user">
+            <span th:if="${#fields.hasErrors('user_id')}" th:errors="*{user_id}"></span><br>
+            <input type="submit" value="Sign in">
+        </form>
+    </div>
+    <button th:action="@{/result.html}">Button</button>
+
+</body>
+</html>

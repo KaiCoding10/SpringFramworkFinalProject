@@ -1,0 +1,21 @@
+img{
+    width: 50px;
+}
+
+h1{
+    color: blue;
+}
+
+.container{
+    width: 80%;
+    margin: 10%;
+}
+
+#button{
+    background: blue;
+    color: aliceblue;
+}
+
+body {
+    background-color: aliceblue ;
+}

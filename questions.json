@@ -1,0 +1,31 @@
+[
+  {
+    "question" : "What framework have you been using in class to create back-end applications connecting to databases?",
+    "answer_1" : "Spring Boot",
+    "answer_2" : "Angular",
+    "answer_3" : "React",
+    "correct_answer" : "Spring Boot"
+  },
+  {
+    "question" : "Where do you declare a connection to a database in Spring Boot Applications?",
+    "answer_1" : "Main method",
+    "answer_2" : "Java package",
+    "answer_3" : "application.properties",
+    "correct_answer" : "application.properties"
+  },
+  {
+    "question" : "What is the special class do you need to have in your project to generate HTTP requests to the server?",
+    "answer_1" : "Executable class",
+    "answer_2" : "Controller",
+    "answer_3" : "Model class",
+    "correct_answer" : "Controller"
+  },
+  {
+    "question" : "Do you have to create a database in MySQL server before connecting to the Spring Boot App (Yes or No)?",
+    "correct_answer" : "Yes"
+  },
+  {
+    "question" : "Do you have to create a database in MongoDB server before connecting to the Spring Boot App (Yes or No)?",
+    "correct_answer" : "No"
+  }
+]
