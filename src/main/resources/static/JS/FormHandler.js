@@ -1,3 +1,5 @@
+//THIS IS TO HANDLE THE FORM INPUT FOR THE HOME PAGE
+
 const homeForm = document.querySelector("#homeForm");
 const saveButton = document.querySelector("submitBtn");
 
@@ -23,7 +25,4 @@ const addUser = (e) => {
     })
     .then((response) => response.text())
     .then(() => window.location.reload());
-
-    //change :)
-    
 };

@@ -2,28 +2,42 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="/CSS/Styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="CSS/Styles.css">
     <title>User Form</title>
 </head>
 <body>
-    <h1>Welcome to Spring Test Portal</h1>
-    <div>
+    <div class="container">
         <form action="#" th:action="@{/user}" th:object="${user}" method="post">
-            <label for="fName"> First Name: </label>
-            <input type="text" id="fName" name="fName" th:field="*{firstName}">
-            <span th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}"></span><br>
+            <h1>Welcome to Spring Test Portal</h1>
+            <div class="form-floating">
+                <input type="text" id="fName" name="fName" th:field="*{firstName}" class="form-control" placeholder="first name">
+                <label for="fName" class="form-label">First Name: </label>
+                <span th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}"></span>
+            </div>
+
             <br>
-            <label for="lName"> Last Name: </label>
-            <input type="text" id="lName" name="lName" th:field="*{lastName}">
-            <span th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}"></span><br>
+
+            <div class="form-floating">
+                <input type="text" id="lName" name="lName" th:field="*{lastName}" class="form-control" placeholder="last name">
+                <label for="lName" class="form-label">Last Name: </label>
+                <span th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}"></span>
+            </div>
+
             <br>
-            <label for="id">ID (for return tester): </label>
-            <input type="number" id="id" name="id" th:field="*{user_id}" placeholder="0 for new user">
-            <span th:if="${#fields.hasErrors('user_id')}" th:errors="*{user_id}"></span><br>
-            <input type="submit" value="Sign in">
+
+            <div class="form-floating">
+                <input type="number" id="id" name="id" th:field="*{user_id}" class="form-control" placeholder="ID">
+                <label for="id" class="form-label">ID (for return tester): 0 for new user </label>
+                <span th:if="${#fields.hasErrors('user_id')}" th:errors="*{user_id}"></span>
+            </div>
+
+            <br>
+
+            <input type="submit" value="Sign in" class="btn btn-primary">
         </form>
     </div>
 
