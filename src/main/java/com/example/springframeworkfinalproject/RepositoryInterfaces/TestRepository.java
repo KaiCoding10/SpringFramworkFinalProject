@@ -4,6 +4,6 @@ import com.example.springframeworkfinalproject.Model.User;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.data.repository.CrudRepository;
 
-public interface TestRepository extends CrudRepository<Test, Long> {
+public interface TestRepository extends CrudRepository<Test, Integer> {
 
 }

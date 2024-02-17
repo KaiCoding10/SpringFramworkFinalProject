@@ -12,7 +12,7 @@ import lombok.*;
 @Entity
 public class Question {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     protected int question_num;
 
     @Column

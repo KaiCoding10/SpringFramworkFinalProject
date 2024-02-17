@@ -1,6 +1,8 @@
 package com.example.springframeworkfinalproject.Model;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
 import lombok.*;
 
 
@@ -16,9 +18,13 @@ public class User {
     protected int user_id;
 
     @Column
+    @NotNull
+    @Size(min = 1,message = " First name is required!" )
     protected String firstName;
 
     @Column
+    @NotNull
+    @Size(min = 1,message  = "Last name is required!" )
     protected String lastName;
 
 }

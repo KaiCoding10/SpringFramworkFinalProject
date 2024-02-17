@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Questions</title>
+    <link rel="stylesheet" href="/CSS/Styles.css">
+    <link rel="icon" href="/Assets/444294.png"/>
+</head>
+<body>
+    <div id="questions">
+        <a href="/">Log out !!!</a>
+      <form action="#" th:action="@{/test}" th:object="${answer}" method="post">
+          <h1>User information:</h1>
+          <label for="userID">ID (Remember this for future attempts) :  </label>
+          <input id="userID" th:value="${answer.user_id}" th:field="*{user_id}" readonly>
+          <p th:text="'First Name: ' + ${user.getFirstName()} "></p>
+          <p th:text="'Last Name: ' + ${user.getLastName()} "></p>
+          <br>
+
+          <h2>Questions: </h2>
+
+          <p th:text="'Number 1: ' + ${questions[0].getQuestion()}"></p>
+          <input type="radio" id="q1a1" name="q1" th:value="${questions[0].getAnswer_1()}" th:field="*{ans[0]}" required="required">
+          <label for="q1a1" th:text="${questions[0].getAnswer_1()}" ></label><br>
+          <input type="radio" id="q1a2" name="q1" th:value="${questions[0].getAnswer_2()}" th:field="*{ans[0]}" required="required">
+          <label for="q1a2" th:text="${questions[0].getAnswer_2()}" ></label><br>
+          <input type="radio" id="q1a3" name="q1" th:value="${questions[0].getAnswer_3()}" th:field="*{ans[0]}" required="required">
+          <label for="q1a3" th:text="${questions[0].getAnswer_3()}" ></label><br>
+
+
+
+          <br>
+          <p th:text="'Number 2: ' + ${questions[1].getQuestion()}"></p>
+          <input type="radio" id="q2a1" name="q2" th:value="${questions[1].getAnswer_1()}" th:field="*{ans[1]}" required="required">
+          <label for="q2a1" th:text="${questions[1].getAnswer_1()}" ></label><br>
+          <input type="radio" id="q2a2" name="q2" th:value="${questions[1].getAnswer_2()}" th:field="*{ans[1]}" required="required">
+          <label for="q2a2" th:text="${questions[1].getAnswer_2()}" ></label><br>
+          <input type="radio" id="q2a3" name="q2" th:value="${questions[1].getAnswer_3()}" th:field="*{ans[1]}" required="required">
+          <label for="q2a3" th:text="${questions[1].getAnswer_3()}" ></label><br>
+
+          <br>
+          <p th:text="'Number 3: ' + ${questions[2].getQuestion()}"></p>
+          <input type="radio" id="q3a1" name="q3" th:value="${questions[2].getAnswer_1()}" th:field="*{ans[2]}" required="required">
+          <label for="q3a1" th:text="${questions[2].getAnswer_1()}" ></label><br>
+          <input type="radio" id="q3a2" name="q3" th:value="${questions[2].getAnswer_2()}" th:field="*{ans[2]}" required="required">
+          <label for="q3a2" th:text="${questions[2].getAnswer_2()}" ></label><br>
+          <input type="radio" id="q3a3" name="q3" th:value="${questions[2].getAnswer_3()}" th:field="*{ans[2]}" required="required">
+          <label for="q3a3" th:text="${questions[2].getAnswer_3()}" ></label><br>
+
+          <br>
+
+          <p th:text="'Number 4: ' + ${questions[3].getQuestion()}"></p>
+          <label for="q4a" >Text your answer: </label>
+          <input type="text" id="q4a" name="q4" th:field="*{ans[3]}" placeholder="Yes or No" required="required">
+
+          <br>
+
+          <p th:text="'Number 5: ' + ${questions[4].getQuestion()}"></p>
+          <label for="q5a" >Text your answer: </label>
+          <input type="text" id="q5a" name="q4" th:field="*{ans[4]}" placeholder="Yes or No" required="required">
+          <br>
+          <br>
+          <input type="submit" id="submitBtn" value="Submit">
+      </form>
+    </div>
+</body>
+</html>
