@@ -15,7 +15,7 @@
     background-color: var(--form-background);
     width: 40%;
     border-radius: 30px;
-    height: 45%;
+    height: fit-content;
 }
 
 form {

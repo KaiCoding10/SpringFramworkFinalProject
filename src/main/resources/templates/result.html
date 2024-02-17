@@ -2,9 +2,45 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="CSS/Styles.css">
+    <link rel="icon" href="/Assets/444294.png"/>
+    <title>Result</title>
 </head>
 <body>
-<h1>result</h1>
+    <div class="container">
+        <div class="form-background">
+            <h1>You have completed the test !</h1>
+            <h2>Final result: </h2>
+            <p th:text="'Total number of questions: ' + ${test.getTotal_question()}"></p>
+            <p th:text="'Number of right answers: ' + ${test.getRight_answer()}"></p>
+            <p th:text="'Number of wrong answers: ' + ${test.getWrong_answer()}"></p>
+            <p>Score per question : 10 points</p>
+            <p th:text="'Total score: ' + ${test.getScore()}"></p>
+            <p th:text="'Your highest score is (Final Score): ' + ${highestScore}"></p>
+            <a href="/">Log out !!!</a>
+            <br>
+            <br>
+            <form action="#" th:action="@{/question}" th:object="${user}" method="post">
+                <div class="form-floating">
+                    <input id='lName' th:value="${user.getLastName()}" th:field="*{lastName}" hidden="hidden" class="form-control">
+                    <label for="lName" hidden="hidden" class="form-label"></label>
+                </div>
+
+                <div class="form-floating">
+                    <input id="fName" th:value="${user.getFirstName()}" th:field="*{firstName}" hidden="hidden" class="form-control">
+                    <label for="fName" hidden="hidden" class="form-label"></label>
+                </div>
+
+                <div class="form-floating">
+                    <input id='ID' th:value="${user.getUser_id()}" th:field="*{user_id}" hidden="hidden" class="form-control">
+                    <label for="ID" hidden="hidden" class="form-label"></label>
+                </div>
+
+                <input type="submit" value="Take this test again!!!">
+            </form>
+        </div>
+    </div>
 </body>
 </html>
