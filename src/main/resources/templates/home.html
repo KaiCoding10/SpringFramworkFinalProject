@@ -10,24 +10,24 @@
     <title>User Form</title>
 </head>
 <body>
-    <h1>Welcome to Spring Test Portal</h1>
-    <div>
-        <form action="#" th:action="@{/question}" th:object="${user}" method="post">
-            <label for="fName"> First Name: </label>
-            <input type="text" id="fName" name="fName" th:field="*{firstName}">
-            <span th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}"></span><br>
-            <br>
-            <label for="lName"> Last Name: </label>
-            <input type="text" id="lName" name="lName" th:field="*{lastName}">
-            <span th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}"></span><br>
-            <br>
-            <label for="id">ID (for return tester, you might lose your progress if ID not provided): </label>
-            <input type="number" id="id" name="id" th:field="*{user_id}" placeholder="0 for new user" min="0">
-            <span th:if="${#fields.hasErrors('user_id')}" th:errors="*{user_id}"></span><br>
-            <br>
-            <input type="submit" value="Sign in">
-        </form>
-    </div>
+<h1>Welcome to Spring Test Portal</h1>
+<div>
+    <form action="#" th:action="@{/question}" th:object="${user}" method="post">
+        <label for="fName"> First Name: </label>
+        <input type="text" id="fName" name="fName" th:field="*{firstName}">
+        <span th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}"></span><br>
+        <br>
+        <label for="lName"> Last Name: </label>
+        <input type="text" id="lName" name="lName" th:field="*{lastName}">
+        <span th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}"></span><br>
+        <br>
+        <label for="id">ID (for return tester, you might lose your progress if ID not provided): </label>
+        <input type="number" id="id" name="id" th:field="*{user_id}" placeholder="0 for new user" min="0">
+        <span th:if="${#fields.hasErrors('user_id')}" th:errors="*{user_id}"></span><br>
+        <br>
+        <input type="submit" value="Sign in">
+    </form>
+</div>
 
 
 </body>
